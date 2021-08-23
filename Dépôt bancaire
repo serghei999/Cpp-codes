@@ -1,0 +1,30 @@
+/////////// Les intérêts cumulés d'un dépôt bancaire
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double a;
+    double p;
+    double r;
+    double n;
+    int year;
+    p=1000.0;
+    r=0.05;
+    n=10;
+    // display headers
+    cout <<"Année "<< setw(21)<< " Le montant du dépôt"<<endl;
+    // set floating point number format
+    cout <<fixed <<setprecision(2);
+    
+    for ( year=1; year<=10; ++year){
+        a=p*pow(1.0+r,year);
+        
+    }
+    cout<<setw(4)<<year<<setw(21)<<a<<endl;
+    
+
+    return 0;
+}
