@@ -1,0 +1,70 @@
+
+
+#include <cmath> 
+
+#include <iostream> 
+
+using namespace std; 
+
+ 
+
+double PVB(double Face,double cr,double r,int m, double T) 
+
+{ 
+
+    // garder la valeur de l'obligation
+
+    double BV=0.; 
+
+    // ajouter les coupons
+    int TNC=T*m; 
+
+    double cpn = (cr/m)*Face; 
+
+    for(int i=1;i<=TNC; i++) 
+
+	{ 
+
+        double ti=double(i)/double(m); 
+
+    	BV = BV + cpn*pow((1+r/m),-ti*m); 
+
+         
+
+	} 
+
+    
+
+     
+
+	BV = BV + Face*pow((1+r/m),-T*m); 
+
+    return BV; 
+
+} 
+
+ 
+
+int main() 
+
+{ 
+
+    double Face = 150; 
+
+    double cr = 0.1; 
+
+    double r =0.1; 
+
+    int m = 2; 
+
+    double T =3; 
+
+     
+
+    cout << " La valeur présente de l'obligation est " << PVB(Face, cr, r, m, T) <<endl; 
+
+    system ("PAUSE"); 
+
+     
+
+} 
